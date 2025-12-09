@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CSS Heart Animation</title>
+<style>
+  .heart {
+    width: 100px;
+    height: 90px;
+    position: inherit;
+    background: linear-gradient(red);
+    transform: rotate(-45deg);
+    animation: pulse 1s infinite;
+    margin: 70px auto;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    width: 100px;
+    height: 90px;
+    background: linear-gradient(red);
+    border-radius: 50%;
+    position: absolute;
+  }
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+  .heart::after {
+    left: 50px;
+    top: 0;
+  }
+  @keyframes pulse {
+    0%, 100% {
+      transform: rotate(-45deg) scale(1);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1.1);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="heart"></div>
+</body>
+</html>
